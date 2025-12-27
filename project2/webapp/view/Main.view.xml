@@ -1,0 +1,42 @@
+<mvc:View controllerName="com.nabi.project2.project2.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="portfolio page">
+    <content>
+
+    <VBox id="_IDGenVBox" >
+
+        <Title id="_IDGenTitle" text= "{/name}" level="H1"/>
+
+        <Input id="_IDGenInput" value="{/name}"/>
+
+        <CheckBox id="_ID" text="Subscribe to my youtube channel" selected="{/Subscribed}"></CheckBox>
+
+        <Text id="1" text="Subscribed: {/Subscribed}" class="sapUiSmallMarginTop"></Text>
+
+
+        <Select id="select" selectedKey="{/country}">
+
+        <items>
+        <core:Item id="text2" key="IN" text="India" xmlns:core="sap.ui.core"/>
+        <core:Item id="text3" key="US" text="UnitedStates" xmlns:core="sap.ui.core"/>
+        <core:Item id="text4" key="UK" text="UnitedKingdom" xmlns:core="sap.ui.core"/>
+        </items>
+
+        </Select>
+
+
+        <Text id="2" text="country: {/country}" class="sapUiSmallMarginTop"/>
+
+        <RadioButtonGroup id="but" selectedIndex="{/gender}">
+        <RadioButton id="5" text= "Male"/>
+        <RadioButton id="6" text = "Female"/>
+        </RadioButtonGroup>
+        
+        <Text id="3" text="Selected gender: {/gender}" class="sapUiSmallMarginTop"/>
+   
+    </VBox>
+
+    </content>
+    </Page>
+</mvc:View>
