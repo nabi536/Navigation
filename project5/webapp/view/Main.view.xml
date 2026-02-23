@@ -1,0 +1,17 @@
+<mvc:View controllerName="com.nabi.project5.project5.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="MVC">
+    <content>
+
+    <VBox id="_IDGenVBox" class="sapUiSmallMarginTop">
+    
+    <Input id="bye" type="Text" placeholder="Employee Name" class="sapUiSmallMarginTop" width="25%"/>
+
+    <Button id="_IDGenButton" text="Submit" class="sapUiSmallMarginTop" press="Onclick"></Button>
+    
+    </VBox>
+    
+    </content>
+    </Page>
+</mvc:View>

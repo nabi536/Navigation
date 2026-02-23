@@ -1,0 +1,117 @@
+{
+  "_version": "1.81.0",
+
+  "sap.app": {
+    "id": "com.mock.integration.mockodataintegration",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+
+    "dataSources": {
+      "mockService": {
+        "uri": "/sap/opu/odata/sap/ZMOCK_SRV/",
+        "type": "OData",
+        "settings": {
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+    "flexEnabled": true,
+
+    "dependencies": {
+      "minUI5Version": "1.120.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.layout": {}
+      }
+    },
+
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+
+    "models": {
+
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.mock.integration.mockodataintegration.i18n.i18n"
+        }
+      },
+
+      "": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "mockService",
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "useBatch": false
+        }
+      }
+
+    },
+
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.mock.integration.mockodataintegration.view",
+        "async": true
+      },
+
+      "routes": [
+        {
+          "name": "RouteMain",
+          "pattern": "",
+          "target": "TargetMain"
+        }
+      ],
+
+      "targets": {
+        "TargetMain": {
+          "viewName": "Main",
+          "viewId": "Main",
+          "viewLevel": 1
+        }
+      }
+    },
+
+    "rootView": {
+      "viewName": "com.mock.integration.mockodataintegration.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

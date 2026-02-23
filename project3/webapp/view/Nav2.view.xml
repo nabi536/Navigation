@@ -1,0 +1,17 @@
+<mvc:View controllerName="com.nabi.project3.project3.controller.Nav2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page2" title="Navigation3">
+    <content>
+     <VBox id="_IDGenVBox2" class="sapUiSmallMargin">
+
+    <Title id="_IDGenTitle2" text="Home Page 3"/>
+                
+    <Text id="_IDGenText2" text="This page is related to home page" class="sapUiSmallMarginTop"/>
+
+    <Button id="_IDGenButton2" text="page 1" type="Emphasized" class="sapUiSmallMarginTop"  press="onNavigate2"/>
+    
+     </VBox>
+    </content>
+    </Page>
+</mvc:View>

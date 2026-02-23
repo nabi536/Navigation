@@ -1,0 +1,243 @@
+<mvc:View
+    id="mainView"
+    controllerName="com.mock.integration.mockodataintegration1.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
+
+    <Page id="mainPage" showHeader="false">
+
+        <content>
+
+            <VBox id="outerContainer"
+                width="100%"
+                height="100%"
+                class="outerContainer">
+
+                <!-- HEADER -->
+                <HBox id="headerBar"
+                    justifyContent="SpaceBetween"
+                    alignItems="Center"
+                    class="headerBar">
+
+                    <Title id="headerTitle"
+                        text="Mock OData Error Resolution Platform"
+                        level="H3" />
+
+                    <core:Icon id="settingsIcon"
+                        src="sap-icon://settings"
+                        size="1.3rem" />
+                </HBox>
+
+                <!-- RESULT SECTION -->
+                <VBox id="resultContainer"
+                    width="100%"
+                    alignItems="Center"
+                    justifyContent="Center"
+                    class="resultContainer sapUiLargeMarginTop">
+
+                    <!-- ✅ UPDATED RESULT CARD (SPACING FIX) -->
+                    <VBox
+                        id="resultCard"
+                        width="50%"
+                        class="resultCard resultSpacing sapUiMediumMargin"
+                        visible="false">
+
+                        <Title
+                            id="titleUserInput"
+                            text="User Input"
+                            level="H4"
+                            class="resultTitle"/>
+
+                        <Text
+                            id="userInputText"
+                            class="resultText"/>
+
+                        <Title
+                            id="titleErrorDetected"
+                            text="Error Detected"
+                            level="H4"
+                            class="resultTitle"/>
+
+                        <Text
+                            id="errorText"
+                            class="resultText errorText"/>
+
+                        <Title
+                            id="titleCorrectedOutput"
+                            text="Corrected Output"
+                            level="H4"
+                            class="resultTitle"/>
+
+                        <Text
+                            id="correctedText"
+                            class="resultText successText"/>
+
+                    </VBox>
+                </VBox>
+
+                <!-- INPUT SECTION -->
+                <VBox id="inputSection"
+                    width="100%"
+                    alignItems="Center"
+                    class="inputSection">
+
+                    <Select id="validationTypeSelect"
+                        width="300px"
+                        selectedKey="TEXT"
+                        class="sapUiSmallMarginBottom">
+
+                        <core:Item id="validationItemText" key="TEXT" text="Text Validation"/>
+                        <core:Item id="validationItemJSON" key="JSON" text="JSON Validation"/>
+                        <core:Item id="validationItemSQL" key="SQL" text="SQL Validation"/>
+                        <core:Item id="validationItemCode" key="CODE" text="Code Validation"/>
+
+                    </Select>
+
+                    <HBox id="inputRow"
+                        width="100%"
+                        justifyContent="Center"
+                        alignItems="Center">
+
+                        <Input id="searchInput"
+                            width="600px"
+                            placeholder="Enter your data below to detect and resolve errors."/>
+
+                        <Button id="goButton"
+                            text="GO"
+                            press="onProcess"
+                            class="sapUiSmallMarginBegin"/>
+
+                    </HBox>
+                </VBox>
+
+                <!-- ANALYTICS SECTION -->
+                <VBox id="analyticsSection"
+                    width="100%"
+                    class="sapUiLargeMarginTop">
+
+                    <HBox id="analyticsHeader"
+                        justifyContent="SpaceBetween"
+                        alignItems="Center">
+
+                        <Title id="analyticsTitle"
+                            text="Validation Analytics"
+                            level="H4"/>
+
+                        <Button id="resetAnalyticsButton"
+                            text="Reset Analytics"
+                            press="onResetAnalytics"/>
+                    </HBox>
+
+                    <viz:VizFrame id="validationChart"
+                        width="100%"
+                        height="300px"
+                        vizType="column">
+
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset
+                                id="chartDataset"
+                                data="{chartModel>/data}">
+
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition
+                                        id="chartDimension"
+                                        name="Status"
+                                        value="{chartModel>status}" />
+                                </viz.data:dimensions>
+
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition
+                                        id="chartMeasure"
+                                        name="Count"
+                                        value="{chartModel>count}" />
+                                </viz.data:measures>
+
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+
+                        <viz:feeds>
+                            <viz.feeds:FeedItem
+                                id="valueFeed"
+                                uid="valueAxis"
+                                type="Measure"
+                                values="Count"/>
+
+                            <viz.feeds:FeedItem
+                                id="categoryFeed"
+                                uid="categoryAxis"
+                                type="Dimension"
+                                values="Status"/>
+                        </viz:feeds>
+
+                    </viz:VizFrame>
+                </VBox>
+
+                <!-- HISTORY SECTION -->
+                <VBox id="historySection"
+                    width="100%"
+                    class="sapUiLargeMarginTop">
+
+                    <Title id="historyTitle"
+                        text="Validation History"
+                        level="H4"/>
+
+                    <SearchField id="historySearchField"
+                        width="300px"
+                        placeholder="Search in history..."
+                        liveChange="onHistorySearch"
+                        class="sapUiSmallMarginBottom"/>
+
+                    <Button id="exportExcelButton"
+                        text="Export to Excel"
+                        type="Emphasized"
+                        press="onExportExcel"
+                        class="sapUiSmallMarginBottom"/>
+
+                    <Table id="historyTable"
+                        inset="false"
+                        items="{historyModel>/records}">
+
+                        <columns>
+                            <Column id="colInput"><Text id="colInputText" text="Input"/></Column>
+                            <Column id="colType"><Text id="colTypeText" text="Type"/></Column>
+                            <Column id="colStatus"><Text id="colStatusText" text="Status"/></Column>
+                            <Column id="colError"><Text id="colErrorText" text="Error"/></Column>
+                            <Column id="colCorrected"><Text id="colCorrectedText" text="Corrected"/></Column>
+                            <Column id="colAction"><Text id="colActionText" text="Action"/></Column>
+                        </columns>
+
+                        <items>
+                            <ColumnListItem id="historyItem">
+                                <cells>
+                                    <Text id="cellInput" text="{historyModel>input}"/>
+                                    <Text id="cellType" text="{historyModel>type}"/>
+
+                                    <ObjectStatus id="cellStatus"
+                                        text="{historyModel>status}"
+                                        state="{historyModel>state}"/>
+
+                                    <Text id="cellError" text="{historyModel>error}"/>
+                                    <Text id="cellCorrected" text="{historyModel>corrected}"/>
+
+                                    <Button id="deleteButton"
+                                        text="Delete"
+                                        type="Reject"
+                                        press="onDeleteRecord"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+
+                    </Table>
+                </VBox>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

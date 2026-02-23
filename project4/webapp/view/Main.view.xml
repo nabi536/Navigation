@@ -1,0 +1,19 @@
+<mvc:View controllerName="com.nabi.project4.project4.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="Name">
+     <content>
+     <VBox id="_IDGenVBox" class="sapUiSmallMargin">
+
+    <Title id="_IDGenTitle" text="Home Page 1"/>
+                
+    <Text id="_IDGenText" text="Chalapathi Institute of Engineering and Technology (CIET) in Guntur, Andhra Pradesh, is a private engineering college offering B.Tech and M.Tech programs, affiliated with Acharya Nagarjuna University and accredited by AICTE, Link: NAAC (A Grade), with UGC's Autonomous status, known for its green campus, focus on practical learning with good labs, strong placement support for CSE, ECE, Civil, etc., and emphasis on holistic student development with extracurriculars like sports and certifications. " class="sapUiSmallMarginTop"/>
+
+    <Input id="_IDGenInput" placeholder="Enter Yor Nasme" class="sapUiSmallMarginTop" width="25%" />
+
+    <Button id="_IDGenButton" text="page 2" type="Emphasized" class="sapUiSmallMarginTop"  press="onNavigate"/>
+    
+     </VBox>
+    </content>
+    </Page>
+</mvc:View>

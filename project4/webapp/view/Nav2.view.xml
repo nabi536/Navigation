@@ -1,0 +1,35 @@
+<mvc:View xmlns:core="sap.ui.core" controllerName="com.nabi.project4.project4.controller.Nav2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page2" title="Country">
+     <content>
+     <VBox id="_IDGenVBox2" class="sapUiSmallMargin">
+
+    <Title id="_IDGenTitle2" text="Home Page 3"/>
+
+     <Text id="_IDGenText3" text="Select Your country" class="sapUiSmallMarginTop"/>
+
+     <Select id="idCountry" change="onSelectChange" width="200px">
+    <items>
+        <core:Item id="_IDGenItem"  key="INDIA" text="INDIA"/>
+        <core:Item id="_IDGenItem1" key="USA" text="USA"/>
+        <core:Item id="_IDGenItem2" key="CHINA" text="CHINA"/>
+        <core:Item id="_IDGenItem3" key="RUSSIA" text="RUSSIA"/>
+    </items>
+  </Select> 
+
+
+     <RadioButtonGroup id="_IDGenRadioButtonGroup1" columns="2" class="sapUiSmallMarginTop" >
+
+     <RadioButton id="_IDGenRadioButton2" text="Male" />
+      <RadioButton id="_IDGenRadioButton3" text="Female" />
+     
+     </RadioButtonGroup>
+                
+
+    <Button id="_IDGenButton3" text="page 1" type="Emphasized" class="sapUiSmallMarginTop"  press="onNavigate2"/>
+    
+     </VBox>
+    </content>
+    </Page>
+</mvc:View>

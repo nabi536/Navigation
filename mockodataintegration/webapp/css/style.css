@@ -1,0 +1,110 @@
+/* Remove shell spacing */
+.sapMPage {
+    padding: 0 !important;
+}
+
+/* ============================= */
+/* Outer Container */
+/* ============================= */
+.outerContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+}
+
+/* ============================= */
+/* Header */
+/* ============================= */
+.headerBar {
+    padding: 15px 25px;
+    border-bottom: 2px solid black;
+}
+
+/* ============================= */
+/* Center Area */
+/* ============================= */
+.centerArea {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ============================= */
+/* Message Card */
+/* ============================= */
+.messageCard {
+    background: #f5f5f5;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ============================= */
+/* Bottom Input */
+/* ============================= */
+.bottomSearchContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 30px;
+}
+
+/* ============================= */
+/* Input Styling */
+/* ============================= */
+.searchInputStyle .sapMInputBaseContentWrapper {
+    height: 55px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.searchInputStyle .sapMInputBaseInner {
+    font-size: 16px;
+}
+
+/* ============================= */
+/* Send Button */
+/* ============================= */
+.sendButtonStyle {
+    height: 55px;
+}
+
+.sendButtonStyle .sapMBtnInner {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: blue;
+    border-radius: 12px;
+}
+
+/* ============================= */
+/* Text Styles */
+/* ============================= */
+.sectionTitle {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.sectionContent {
+    margin-bottom: 15px;
+}
+
+.errorText {
+    color: red;
+    font-weight: bold;
+}
+
+.successText {
+    color: green;
+    font-weight: bold;
+}
+
+.spacingTop {
+    margin-top: 15px;
+}

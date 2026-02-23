@@ -1,0 +1,72 @@
+<mvc:View
+    id="mainView"
+    controllerName="com.mock.integration.mockodataintegration.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page id="mainPage" showHeader="false">
+
+        <content>
+
+            <VBox id="outerContainer" class="outerContainer">
+
+                <!-- HEADER -->
+                <HBox id="headerBar"
+                      class="headerBar"
+                      alignItems="Center"
+                      justifyContent="SpaceBetween">
+
+                    <Image
+                        id="headerLogo"
+                        src="https://img.icons8.com/color/96/database.png"
+                        width="45px"
+                        height="45px" />
+
+                    <Title
+                        id="headerTitle"
+                        text="Mock OData Integration App"
+                        level="H3" />
+
+                    <core:Icon
+                        id="headerMenuIcon"
+                        src="sap-icon://overflow"
+                        size="20px" />
+
+                </HBox>
+
+                <!-- CENTER AREA -->
+                <VBox id="centerArea"
+                      class="centerArea">
+
+                    <VBox id="messageContainer"
+                          class="messageCard"
+                          width="700px" />
+
+                </VBox>
+
+                <!-- BOTTOM INPUT AREA -->
+                <HBox id="bottomSearchContainer"
+                      class="bottomSearchContainer">
+
+                    <Input
+                        id="searchInput"
+                        placeholder="Enter text here..."
+                        width="650px"
+                        class="searchInputStyle" />
+
+                    <Button
+                        id="sendButton"
+                        text="Send"
+                        press="onSend"
+                        class="sendButtonStyle" />
+
+                </HBox>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

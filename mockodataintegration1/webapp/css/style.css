@@ -1,0 +1,92 @@
+.outerContainer {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.headerBar {
+    border-bottom: 2px solid #000;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.resultContainer {
+    flex: 1;
+    margin-bottom: 30px;
+}
+
+.inputSection {
+    margin-bottom: 40px;
+}
+
+.searchInputStyle .sapMInputBaseContentWrapper {
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.searchInputStyle .sapMInputBaseInner {
+    font-size: 16px;
+}
+
+.goButtonStyle .sapMBtnInner {
+    height: 50px;
+    border-radius: 10px;
+}
+
+.resultCard {
+    background-color: #f5f5f5;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.sectionTitle {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.sectionContent {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.errorText {
+    color: #bb0000;
+    font-weight: bold;
+}
+
+.successText {
+    color: #0a7d0a;
+    font-weight: bold;
+}
+
+/* ================= RESULT SPACING FIX ================= */
+
+.resultSpacing {
+    gap: 6px; /* controls vertical spacing */
+}
+
+.resultTitle {
+    margin-top: 10px;
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+.resultText {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Reduce extra SAP margins */
+.sapUiMediumMargin {
+    margin: 8px !important;
+}
+
+/* Prevent big empty gaps */
+.resultContainer {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
