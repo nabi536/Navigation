@@ -39,7 +39,7 @@
                     justifyContent="Center"
                     class="resultContainer sapUiLargeMarginTop">
 
-                    <!-- ✅ UPDATED RESULT CARD (SPACING FIX) -->
+                    <!-- UPDATED RESULT CARD (SPACING FIX) -->
                     <VBox
                         id="resultCard"
                         width="50%"

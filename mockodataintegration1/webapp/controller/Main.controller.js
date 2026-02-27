@@ -48,7 +48,7 @@ sap.ui.define([
             var aErrors = [];
             var aImprovements = [];
 
-            /* ================= TEXT ================= */
+           
             if (sType === "TEXT") {
 
                 var sOriginal = sCorrected;
@@ -99,7 +99,7 @@ sap.ui.define([
                 }
             }
 
-            /* ================= JSON ================= */
+            
             if (sType === "JSON") {
                 try {
                     JSON.parse(sValue);
@@ -109,7 +109,7 @@ sap.ui.define([
                 }
             }
 
-            /* ================= SQL ================= */
+           
             if (sType === "SQL") {
                 if (!/;$/g.test(sCorrected)) {
                     aErrors.push("SQL statement missing semicolon");
@@ -117,7 +117,7 @@ sap.ui.define([
                 }
             }
 
-            /* ================= CODE ================= */
+            
             if (sType === "CODE") {
 
                 if (/return\s+.+[^;]\s*$/m.test(sCorrected)) {
@@ -142,7 +142,7 @@ sap.ui.define([
                 }
             }
 
-            /* ================= FINAL STATUS RULE ================= */
+           
             //  ANY change OR improvement OR error = ERROR
             var bIsModified =
                 aErrors.length > 0 ||
